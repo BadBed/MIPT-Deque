@@ -12,6 +12,7 @@ extern Deque<int>gen_random(size_t size, int max_value);
 extern Deque<int>gen_id(size_t size);
 
 namespace {
+
 TEST(iterator, sort) {
 	Deque<int> deq = gen_random(20, 100);
 	std::sort(deq.begin(), deq.end());
@@ -39,7 +40,7 @@ TEST(iterator, const_iterator_and_plus_and_random_access) {
 	auto it = a.cbegin();
 	int i = 3;
 	EXPECT_EQ(it[i], i);
-	EXPECT_EQ(it + i, i);
+	EXPECT_EQ(*(it + i), i);
 }
 
 TEST(iterator, increment) {
